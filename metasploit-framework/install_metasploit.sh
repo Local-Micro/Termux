@@ -32,7 +32,7 @@ ${rubypath}/${rubyversion}/bin/gem install --no-document --verbose bundler:1.17.
 ${rubypath}/${rubyversion}/bin/bundle config build.nokogiri --use-system-libraries
 ${rubypath}/${rubyversion}/bin/bundle install -j5
 echo "[*]开始修改metasploit-framework的默认解释器"
-sed -i '1c#!/data/data/com.termux/files/usr/share/ruby/'${rubyversion}'/bin/ruby' ${msfpath}/msfconsole ${msfpath}/msfd ${msfpath}/msfdb ${msfpath}/msfrpc ${msfpath}/msfrpcd ${msfpath}/msfupdate ${msfpath}/msfvenom
+sed -i '1c#!'${rubypath}${rubyversion}'/bin/ruby' ${msfpath}/msfconsole ${msfpath}/msfd ${msfpath}/msfdb ${msfpath}/msfrpc ${msfpath}/msfrpcd ${msfpath}/msfupdate ${msfpath}/msfvenom
 echo "[*]执行一些修复"
 sed -i "s@/etc/resolv.conf@$PREFIX/etc/resolv.conf@g" ${msfpath}/lib/net/dns/resolver.rb
 find ${msfpath} -type f -executable -print0 | xargs -0 -r termux-fix-shebang
