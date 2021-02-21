@@ -10,7 +10,7 @@ rm -rf /data/data/com.termux/files/home/metasploit-framework /data/data/com.term
 echo "[*]开始下载metasploit-framework归档包"
 wget https://github.com/rapid7/metasploit-framework/archive/${msfversion}.tar.gz -P ${TMPDIR}/
 echo "[*]开始解压metasploit-framework归档包"
-tar -xf ${TMPDIR}/${msfversion}.tar.gz -C ${TMPDIR}
+tar -xf ${TMPDIR}/${msfversion}.tar.gz -C ${TMPDIR}/
 mkdir -p ${msfpath}
 cp -r ${TMPDIR}/metasploit-framework-${msfversion}/* ${msfpath}/
 echo "[*]开始下载ruby-${rubyversion}源码包"
@@ -18,12 +18,12 @@ wget https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.1.tar.gz -P ${TMPDIR}/
 echo "[*]开始解压ruby-${rubyversion}源码包"
 tar -xf ${TMPDIR}/ruby-${rubyversion}.tar.gz -C ${TMPDIR}/
 echo "[*]开始配置ruby-${rubyversion}"
-cd ${TMPDIR}/ruby-${rubyversion}
+cd ${TMPDIR}/ruby-${rubyversion}/
 ./configure --prefix=/data/data/com.termux/files/usr/share/ruby/${rubyversion}/
 echo "[*]开始编译${rubyversion}版本的ruby"
 make
 echo "[*]开始安装${rubyversion}版本的ruby"
-mkdir -p /data/data/com.termux/files/usr/share/ruby/${rubyversion}
+mkdir -p /data/data/com.termux/files/usr/share/ruby/${rubyversion}/
 make install
 make clean
 echo "[*]开始安装metasploit-framework-${msfversion}"
