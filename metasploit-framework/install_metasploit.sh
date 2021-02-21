@@ -50,5 +50,6 @@ if [ -z "$(psql -l | grep msf_database)" ]; then     createdb msf_database
 fi
 echo "[*]开始将metasploit-framework加入PATH路径"
 echo "export PATH=$PATH:${msfpath}" >> $HOME/.bashrc
+source ${HOME}/.bashrc
 echo "[*]处理安装文件"
 rm -rf ${TMPDIR}/${msfversion}.tar.gz ${TMPDIR}/ruby-${rubyversion}.tar.gz ${TMPDIR}ruby-${rubyversion}/
