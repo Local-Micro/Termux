@@ -4,7 +4,7 @@ rubypath='/data/data/com.termux/files/usr/share/ruby'
 msfversion='6.0.30'
 rubyversion='2.7.1'
 echo '[*]开始下载metasploit-framework-${msfversion}依赖包'
-apt install -y libiconv zlib autoconf bison clang coreutils curl findutils git apr apr-util libffi libgmp libpcap postgresql readline libsqlite openssl libtool libxml2 libxslt ncurses pkg-config wget make ruby2 libgrpc termux-tools ncurses-utils ncurses unzip zip tar termux-elf-cleaner
+apt install -y libiconv zlib autoconf bison clang coreutils curl findutils git apr apr-util libffi libgmp libpcap postgresql readline libsqlite openssl libtool libxml2 libxslt ncurses pkg-config wget make libgrpc termux-tools ncurses-utils ncurses unzip zip tar termux-elf-cleaner
 echo '[*]开始删除旧版metasploit-framework'
 rm -rf /data/data/com.termux/files/home/metasploit-framework /data/data/com.termux/files/usr/share/metasploit-framework
 echo '[*]开始下载metasploit-framework归档包'
